@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" total="1" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="818" started-at="2016-07-16T11:10:12Z" finished-at="2016-07-16T11:10:13Z">
+    <groups>
+    </groups>
+    <test name="Surefire test" duration-ms="818" started-at="2016-07-16T11:10:12Z" finished-at="2016-07-16T11:10:13Z">
+      <class name="com.test.ProductTest">
+        <test-method status="PASS" signature="beforeSuite(org.testng.ITestContext)[pri:0, instance:com.test.ProductTest@5db250b4]" name="beforeSuite" is-config="true" duration-ms="3596" started-at="2016-07-16T07:10:08Z" finished-at="2016-07-16T07:10:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@40d10481]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:com.test.ProductTest@5db250b4]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="1" started-at="2016-07-16T07:10:12Z" finished-at="2016-07-16T07:10:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.test.ProductTest@5db250b4]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="0" started-at="2016-07-16T07:10:12Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2016-07-16T07:10:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.test.ProductTest@5db250b4]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="1" started-at="2016-07-16T07:10:12Z" finished-at="2016-07-16T07:10:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.test.ProductTest.sampleXml()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="FAIL" signature="sampleXml()[pri:0, instance:com.test.ProductTest@5db250b4]" name="sampleXml" duration-ms="792" started-at="2016-07-16T07:10:12Z" finished-at="2016-07-16T07:10:13Z">
+          <exception class="com.consol.citrus.exceptions.TestCaseFailedException">
+            <message>
+              <![CDATA[Test case failed]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.consol.citrus.exceptions.TestCaseFailedException: Test case failed
+	at com.consol.citrus.TestCase.executeAction(TestCase.java:221)
+	at com.consol.citrus.TestCase.doExecute(TestCase.java:142)
+	at com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:42)
+	at com.consol.citrus.Citrus.run(Citrus.java:254)
+	at com.consol.citrus.testng.AbstractTestNGCitrusTest.run(AbstractTestNGCitrusTest.java:104)
+	at com.consol.citrus.testng.AbstractTestNGCitrusTest.run(AbstractTestNGCitrusTest.java:70)
+	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:208)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:635)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:132)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:134)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:118)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:146)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:286)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:240)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+Caused by: org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:5000/api/products/":Connect to localhost:5000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:5000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:607)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:557)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:475)
+	at com.consol.citrus.http.client.HttpClient.send(HttpClient.java:117)
+	at com.consol.citrus.actions.SendMessageAction.doExecute(SendMessageAction.java:103)
+	at com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:42)
+	at com.consol.citrus.TestCase.executeAction(TestCase.java:214)
+	... 29 more
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:5000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:91)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.http.client.InterceptingClientHttpRequest$RequestExecution.execute(InterceptingClientHttpRequest.java:94)
+	at com.consol.citrus.http.interceptor.LoggingClientInterceptor.intercept(LoggingClientInterceptor.java:56)
+	at org.springframework.http.client.InterceptingClientHttpRequest$RequestExecution.execute(InterceptingClientHttpRequest.java:84)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:69)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:596)
+	... 35 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 54 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.consol.citrus.exceptions.TestCaseFailedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sampleXml -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.test.ProductTest@5db250b4]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2016-07-16T07:10:13Z" finished-at="2016-07-16T07:10:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.test.ProductTest@5db250b4]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2016-07-16T07:10:13Z" finished-at="2016-07-16T07:10:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.test.ProductTest.sampleXml()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="afterSuite(org.testng.ITestContext)[pri:0, instance:com.test.ProductTest@5db250b4]" name="afterSuite" is-config="true" duration-ms="78" started-at="2016-07-16T07:10:13Z" finished-at="2016-07-16T07:10:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@40d10481]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- com.test.ProductTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

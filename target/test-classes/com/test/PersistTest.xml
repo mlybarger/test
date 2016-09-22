@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase" 
+              xmlns:jms="http://www.citrusframework.org/schema/jms/testcase"
+              xmlns:http="http://www.citrusframework.org/schema/http/testcase"
+              xmlns:ws="http://www.citrusframework.org/schema/ws/testcase"
+              xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+                  http://www.citrusframework.org/schema/jms/testcase http://www.citrusframework.org/schema/jms/testcase/citrus-jms-testcase.xsd
+                  http://www.citrusframework.org/schema/ws/testcase http://www.citrusframework.org/schema/ws/testcase/citrus-ws-testcase.xsd
+                  http://www.citrusframework.org/schema/http/testcase http://www.citrusframework.org/schema/http/testcase/citrus-http-testcase.xsd
+                  http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+    
+  <testcase name="PersistTest">
+    <meta-info>
+      <author>Mark</author>
+      <creationdate>2013-01-01</creationdate>
+      <status>DRAFT</status>
+      <last-updated-by>Citrus</last-updated-by>
+      <last-updated-on>2013-01-01T00:00:00</last-updated-on>
+    </meta-info>
+    <description>Test Product Api</description>
+    <variables>
+        <variable name="now" value="citrus:currentDate()"/>
+        <variable name="PERSIST.DATA" value="citrus:randomString(10)"/>
+    </variables>
+    
+    <actions>
+      <echo>
+          <message>Today is: ${now} ${PERSIST.DATA}</message>
+      </echo>
+
+      <!--
+      Given: broker is available and persist app is deployed. 
+      When:  data is posted to persist queue.
+      Then:  file contains persisted data.
+      -->
+	  <!-- 
+		1. TODO: trunctate the file.
+		2. TODO: show file doesn't contain data to be persisted.
+		3. send message to amq.
+		4. verify file contains data.
+	  -->
+		<send endpoint="sshClient">	
+			<message>
+				<payload>
+					<ssh-request xmlns="http://www.citrusframework.org/schema/ssh/message">
+						<command>
+							rm /tmp/tjug
+						</command>
+						<stdin></stdin>
+					</ssh-request>
+				</payload>
+			</message>
+		</send>
+		<send endpoint="persistEndpoint">
+			<message>
+				<data>
+					<![CDATA[ ${PERSIST.DATA} ]]>
+				</data>
+			</message>
+		</send>
+		<send endpoint="sshClient">	
+			<message>
+				<payload>
+					<ssh-request xmlns="http://www.citrusframework.org/schema/ssh/message">
+						<command>
+							cat /tmp/tjug
+						</command>
+						<stdin></stdin>
+					</ssh-request>
+				</payload>
+			</message>
+		</send>
+		<receive endpoint="sshClient">
+			<message>
+				<validate>
+					<script type="groovy">
+	      					println receivedMessage
+	      					assert root.stdout.text().contains('${PERSIST.DATA}')
+      				</script>
+				</validate>
+			</message>
+		</receive> 
+    </actions>
+  </testcase>
+</spring:beans>

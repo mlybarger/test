@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase" 
+              xmlns:jms="http://www.citrusframework.org/schema/jms/testcase"
+              xmlns:http="http://www.citrusframework.org/schema/http/testcase"
+              xmlns:ws="http://www.citrusframework.org/schema/ws/testcase"
+              xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+                  http://www.citrusframework.org/schema/jms/testcase http://www.citrusframework.org/schema/jms/testcase/citrus-jms-testcase.xsd
+                  http://www.citrusframework.org/schema/ws/testcase http://www.citrusframework.org/schema/ws/testcase/citrus-ws-testcase.xsd
+                  http://www.citrusframework.org/schema/http/testcase http://www.citrusframework.org/schema/http/testcase/citrus-http-testcase.xsd
+                  http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+    
+  <spring:import resource="classpath:citrus-templates.xml"/>
+  <testcase name="ProductTest">
+    <meta-info>
+      <author>Mark</author>
+      <creationdate>2013-01-01</creationdate>
+      <status>DRAFT</status>
+      <last-updated-by>Citrus</last-updated-by>
+      <last-updated-on>2013-01-01T00:00:00</last-updated-on>
+    </meta-info>
+    
+    <description>Test Product Api</description>
+    
+    <variables>
+        <variable name="now" value="citrus:currentDate()"/>
+        <variable name="PERSIST.DATA" value="citrus:randomString(10)"/>
+    </variables>
+    
+    <actions>
+      <echo>
+          <message>Today is: ${now}</message>
+      </echo>
+      <!--
+      Given: product api exists and is available.
+      When:  product api is invoked.
+      Then: a list of products is returned.
+      -->
+      <send endpoint="productHttpClient">
+        <message>
+          <data/>
+        </message>
+      </send>
+      <receive endpoint="productHttpClient">
+        <message type="json">
+          <data/>
+        </message>
+      </receive>
+      <!--
+      Given: product api exists and is available. new product doesn't exist in db. 
+      When:  new product is posted to api and then get api is invoked.
+      Then:  returned product contains the item that was posted.
+      		 db contains the new product.
+      {"id":"5","name":"juice"}
+      <product><id>1</id><name>CITRUS</name></product>
+      -->
+      <call-template name="clearProduct"/>
+      <sql datasource="dataSource">
+      	<statement>select count(*) as product_count from product where id = 5</statement>
+      	<validate column="PRODUCT_COUNT" value="0"/>
+      </sql>
+      <http:send-request client="productHttpClient">
+		<http:POST>
+			<http:headers content-type="application/json" accept="application/json">
+				<http:header name="Accept-Charset" value="utf-8"/>
+			</http:headers>
+    		<http:body>
+      			<http:data>
+        		<![CDATA[
+					{"id":"5","name":"sumatra"}
+        		]]>
+      			</http:data>
+    		</http:body>			
+		</http:POST>      
+      </http:send-request>
+      <receive endpoint="productHttpClient">
+        <message type="json">
+          <data/>
+          <validate>
+            <json-path expression="$['name']" value="sumatra"/>          
+          </validate>
+        </message>
+      </receive>
+      <!--  validate the record is in the database. -->
+      <sql datasource="dataSource">
+      	<statement>select count(*) as PRODUCT_COUNT from product where id = 5</statement>
+      	<statement>select NAME from product where id = 5</statement>
+      	<validate column="PRODUCT_COUNT" value="1"/>
+      	<validate column="NAME" value="sumatra"/>
+      </sql>
+    </actions>
+    <finally>
+      <!-- data cleanup -->
+      <call-template name="clearProduct"/>    
+    </finally>
+  </testcase>
+</spring:beans>

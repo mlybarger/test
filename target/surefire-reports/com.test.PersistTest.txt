@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: com.test.PersistTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 5.548 sec <<< FAILURE! - in com.test.PersistTest
+sampleXml(com.test.PersistTest)  Time elapsed: 1.036 sec  <<< FAILURE!
+com.consol.citrus.exceptions.TestCaseFailedException: Test case failed
+Caused by: org.springframework.jms.UncategorizedJmsException: Uncategorized exception occured during JMS processing; nested exception is javax.jms.JMSException: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+Caused by: javax.jms.JMSException: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+Caused by: java.net.ConnectException: Connection refused
+

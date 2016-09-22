@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.test.ProductTest" time="5.622" tests="1" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/opt/jdk1.8.0_91/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.91-b14"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/user/test"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="test" value="ProductTest"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/user/test"/>
+    <property name="java.runtime.version" value="1.8.0_91-b14"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/opt/jdk1.8.0_91/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/apache-maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="3.10.0-327.el7.x86_64"/>
+    <property name="user.home" value="/home/user"/>
+    <property name="user.timezone" value="America/New_York"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="user"/>
+    <property name="java.class.path" value="/usr/share/apache-maven/boot/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/opt/jdk1.8.0_91/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher integration-test -Dtest=ProductTest"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_91"/>
+    <property name="java.ext.dirs" value="/opt/jdk1.8.0_91/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/opt/jdk1.8.0_91/jre/lib/resources.jar:/opt/jdk1.8.0_91/jre/lib/rt.jar:/opt/jdk1.8.0_91/jre/lib/sunrsasign.jar:/opt/jdk1.8.0_91/jre/lib/jsse.jar:/opt/jdk1.8.0_91/jre/lib/jce.jar:/opt/jdk1.8.0_91/jre/lib/charsets.jar:/opt/jdk1.8.0_91/jre/lib/jfr.jar:/opt/jdk1.8.0_91/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/usr/share/apache-maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="sampleXml" classname="com.test.ProductTest" time="0.793">
+    <failure message="Test case failed" type="com.consol.citrus.exceptions.TestCaseFailedException">com.consol.citrus.exceptions.TestCaseFailedException: Test case failed
+Caused by: org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:5000/api/products/":Connect to localhost:5000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:5000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:5000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+Caused by: java.net.ConnectException: Connection refused
+</failure>
+    <system-out><![CDATA[07:10:09,024 INFO         citrus.Citrus| Unable to locate Citrus application properties
+07:10:09,089 INFO  BeanDefinitionReader| Loading XML bean definitions from URL [file:/home/user/test/target/test-classes/citrus-context.xml]
+07:10:09,741 DEBUG BeanDefinitionReader| Loaded 12 bean definitions from location pattern [classpath*:citrus-context.xml]
+07:10:10,325 DEBUG .XsdSchemaRepository| Loading XSD schema resource citrus-http-message.xsd
+07:10:10,339 DEBUG .XsdSchemaRepository| Loading XSD schema resource citrus-ssh-message.xsd
+07:10:11,811 INFO   model.SshMarshaller| Creating JAXBContext with classes to be bound [class com.consol.citrus.ssh.model.SshRequest,class com.consol.citrus.ssh.model.SshResponse]
+07:10:12,124 DEBUG  model.SshMarshaller| Setting validation schema to class path resource [com/consol/citrus/schema/citrus-ssh-message.xsd]
+07:10:12,327 INFO         citrus.Citrus| 
+07:10:12,327 INFO         citrus.Citrus| ------------------------------------------------------------------------
+07:10:12,327 INFO         citrus.Citrus|        .__  __                       
+07:10:12,327 INFO         citrus.Citrus|   ____ |__|/  |________ __ __  ______
+07:10:12,327 INFO         citrus.Citrus| _/ ___\|  \   __\_  __ \  |  \/  ___/
+07:10:12,327 INFO         citrus.Citrus| \  \___|  ||  |  |  | \/  |  /\___ \ 
+07:10:12,327 INFO         citrus.Citrus|  \___  >__||__|  |__|  |____//____  >
+07:10:12,327 INFO         citrus.Citrus|      \/                           \/
+07:10:12,327 INFO         citrus.Citrus| 
+07:10:12,327 INFO         citrus.Citrus| C I T R U S  T E S T S  2.6
+07:10:12,327 INFO         citrus.Citrus| 
+07:10:12,327 INFO         citrus.Citrus| ------------------------------------------------------------------------
+07:10:12,327 DEBUG        citrus.Citrus| BEFORE TEST SUITE
+07:10:12,327 INFO         citrus.Citrus| 
+07:10:12,328 INFO         citrus.Citrus| 
+07:10:12,328 INFO         citrus.Citrus| BEFORE TEST SUITE: SUCCESS
+07:10:12,328 INFO         citrus.Citrus| ------------------------------------------------------------------------
+07:10:12,328 INFO         citrus.Citrus| 
+07:10:12,349 DEBUG t.TestContextFactory| Created new test context - using global variables: '{project.name=Citrus Integration Tests}'
+07:10:12,793 INFO         citrus.Citrus| 
+07:10:12,793 INFO         citrus.Citrus| ------------------------------------------------------------------------
+07:10:12,793 DEBUG        citrus.Citrus| STARTING TEST ProductTest <com.test>
+07:10:12,793 INFO         citrus.Citrus| 
+07:10:12,793 DEBUG      citrus.TestCase| Initializing test case
+07:10:12,826 DEBUG  context.TestContext| Setting variable: now with value: '16.07.2016'
+07:10:12,826 DEBUG  context.TestContext| Setting variable: PERSIST.DATA with value: 'WtDwAuBkNM'
+07:10:12,826 DEBUG      citrus.TestCase| Global variables:
+07:10:12,826 DEBUG      citrus.TestCase| project.name = Citrus Integration Tests
+07:10:12,826 DEBUG      citrus.TestCase| PERSIST.DATA = WtDwAuBkNM
+07:10:12,826 DEBUG      citrus.TestCase| now = 16.07.2016
+07:10:12,826 DEBUG  context.TestContext| Setting variable: citrus.test.name with value: 'ProductTest'
+07:10:12,829 DEBUG  context.TestContext| Setting variable: citrus.test.package with value: 'com.test'
+07:10:12,829 INFO         citrus.Citrus| 
+07:10:12,829 DEBUG        citrus.Citrus| TEST STEP 1/8: echo
+07:10:12,829 INFO    actions.EchoAction| Today is: 16.07.2016
+07:10:12,830 INFO         citrus.Citrus| 
+07:10:12,830 DEBUG        citrus.Citrus| TEST STEP 1/8 SUCCESS
+07:10:12,830 INFO         citrus.Citrus| 
+07:10:12,830 DEBUG        citrus.Citrus| TEST STEP 2/8: send
+07:10:12,831 DEBUG ltCorrelationManager| Saving correlation key for 'citrus_message_correlator_productHttpClient'
+07:10:12,832 DEBUG  context.TestContext| Setting variable: citrus_message_correlator_productHttpClient with value: 'citrus_message_id = '0c086f4c-b21b-460d-8db6-f23e79c92cf9''
+07:10:12,832 DEBUG    client.HttpClient| Sending HTTP message to: 'http://localhost:5000/api/products/'
+07:10:12,832 DEBUG    client.HttpClient| Message to send:
+
+07:10:12,972 DEBUG ingClientInterceptor| Sending Http request message
+07:10:12,972 DEBUG   Logger.Message_OUT| GET http://localhost:5000/api/products/
+Accept:text/plain, application/json
+Content-Type:application/json;charset=UTF-8
+Content-Length:0
+
+
+07:10:12,991 DEBUG ol.RequestAddCookies| CookieSpec selected: default
+07:10:13,034 DEBUG col.RequestAuthCache| Auth cache not set in the context
+07:10:13,051 DEBUG entConnectionManager| Connection request: [route: {}->http://localhost:5000][total kept alive: 0; route allocated: 0 of 5; total allocated: 0 of 10]
+07:10:13,072 DEBUG entConnectionManager| Connection leased: [id: 0][route: {}->http://localhost:5000][total kept alive: 0; route allocated: 1 of 5; total allocated: 1 of 10]
+07:10:13,073 DEBUG chain.MainClientExec| Opening connection {}->http://localhost:5000
+07:10:13,115 DEBUG ntConnectionOperator| Connecting to localhost/127.0.0.1:5000
+07:10:13,117 DEBUG ntConnectionOperator| Connect to localhost/127.0.0.1:5000 timed out. Connection will be retried using another IP address
+07:10:13,117 DEBUG ntConnectionOperator| Connecting to localhost/0:0:0:0:0:0:0:1:5000
+07:10:13,120 DEBUG HttpClientConnection| http-outgoing-0: Shutdown connection
+07:10:13,120 DEBUG chain.MainClientExec| Connection discarded
+07:10:13,120 DEBUG entConnectionManager| Connection released: [id: 0][route: {}->http://localhost:5000][total kept alive: 0; route allocated: 0 of 5; total allocated: 0 of 10]
+07:10:13,121 INFO         citrus.Citrus| 
+07:10:13,121 ERROR        citrus.Citrus| TEST FAILED ProductTest <com.test> Nested exception is: 
+org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:5000/api/products/":Connect to localhost:5000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:5000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:607)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:557)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:475)
+	at com.consol.citrus.http.client.HttpClient.send(HttpClient.java:117)
+	at com.consol.citrus.actions.SendMessageAction.doExecute(SendMessageAction.java:103)
+	at com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:42)
+	at com.consol.citrus.TestCase.executeAction(TestCase.java:214)
+	at com.consol.citrus.TestCase.doExecute(TestCase.java:142)
+	at com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:42)
+	at com.consol.citrus.Citrus.run(Citrus.java:254)
+	at com.consol.citrus.testng.AbstractTestNGCitrusTest.run(AbstractTestNGCitrusTest.java:104)
+	at com.consol.citrus.testng.AbstractTestNGCitrusTest.run(AbstractTestNGCitrusTest.java:70)
+	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:208)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:635)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:132)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:134)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:118)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:146)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:286)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:240)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:5000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:91)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.http.client.InterceptingClientHttpRequest$RequestExecution.execute(InterceptingClientHttpRequest.java:94)
+	at com.consol.citrus.http.interceptor.LoggingClientInterceptor.intercept(LoggingClientInterceptor.java:56)
+	at org.springframework.http.client.InterceptingClientHttpRequest$RequestExecution.execute(InterceptingClientHttpRequest.java:84)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:69)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:596)
+	... 35 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 54 more
+07:10:13,138 INFO         citrus.Citrus| ------------------------------------------------------------------------
+07:10:13,139 INFO         citrus.Citrus| 
+]]></system-out>
+  </testcase>
+</testsuite>
